@@ -33,6 +33,7 @@ print(TEST_DATA.sample(5))
 print(METADATA.shape)
 print(METADATA.sample(5))
 
+# merge csv files
 TRAIN_DATA = TRAIN_DATA.merge(METADATA, on = 'class_id')
 TEST_DATA = TEST_DATA.merge(METADATA, on = 'class_id')
 print(TRAIN_DATA.head())
