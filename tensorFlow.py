@@ -23,6 +23,7 @@ TRAIN_DATA = pd.read_csv('index.csv')
 TEST_DATA = pd.read_csv('test.csv')
 METADATA = pd.read_csv('metadata.csv')
 
+# prints to show data
 print(TRAIN_DATA.shape)
 print(TRAIN_DATA.sample(5))
 
