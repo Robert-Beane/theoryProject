@@ -14,10 +14,9 @@ import tensorflow_hub as hub
 #tf.set_seed(static_seed)
 
 #  Setting up randomized seed
-ran_seed = 420
-random.seed(ran_seed)
-np.random.seed(ran_seed)
-tf.random.set_seed(ran_seed)
+seed = 420
+random.seed(seed)
+np.random.seed(seed)
 
 TRAIN_DATA = pd.read_csv('index.csv')
 TEST_DATA = pd.read_csv('test.csv')
@@ -53,3 +52,21 @@ def tf_load_data(dataframe, batch_size = 32, img_size = IMG_SIZE, directory_path
 
 trainDataset = tf_load_data(TRAIN_DATA)
 testDataset = tf_load_data(TEST_DATA)
+
+#  begin MLP (multilayer perception) model
+
+tf.random.set_seed(seed)  # seed is 420
+
+model_mlp = tf.keras.Sequential([
+    tf.keras.layers.Input(shape=(trainDataset.image_shape), name='input'),
+    tf.keras.layers.Flatten(name='flatten'),
+    tf.keras.layers.Dense(100, activation='relu', name='first_hidden_layer'),
+    tf.keras.layers.Dense(64, activation='relu', name='second_hidden_layer'),
+    tf.keras.layers.Dense(36, activation='softmax', name='output_layer')
+], name='MLP')
+
+model_mlp.compile(loss=tf.keras.losses.CategoricalCrossentropy(),
+                  optimizer=tf.keras.optimizers.Adam(learning_rate = 1e-3),
+                  metrics=['accuracy'])
+
+model_mlp.summary()
