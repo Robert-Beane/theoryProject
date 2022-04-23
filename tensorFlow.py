@@ -37,3 +37,19 @@ print(METADATA.sample(5))
 TRAIN_DATA = TRAIN_DATA.merge(METADATA, on = 'class_id')
 TEST_DATA = TEST_DATA.merge(METADATA, on = 'class_id')
 print(TRAIN_DATA.head())
+
+PATH = '../theoryProject/'
+IMG_SIZE = 256
+
+def tf_load_data(dataframe, batch_size = 32, img_size = IMG_SIZE, directory_path = PATH, rescale = True):
+    if rescale:
+        dataGenerator = tf.keras.preprocessing.image.ImageDataGenerator(rescale=1./255)
+    else:
+        dataGenerator = tf.keras.preprocessing.image.ImageDataGenerator()
+
+
+    tf_dataset = dataGenerator.flow_from_dataframe(dataframe, directory = directory_path, x_col = 'PATH', y_col= 'minifigure_name', target_size= (img_size, img_size), batch_size= batch_size,)
+    return tf_dataset
+
+trainDataset = tf_load_data(TRAIN_DATA)
+testDataset = tf_load_data(TEST_DATA)
