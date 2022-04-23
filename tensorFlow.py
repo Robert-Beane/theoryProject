@@ -70,3 +70,56 @@ model_mlp.compile(loss=tf.keras.losses.CategoricalCrossentropy(),
                   metrics=['accuracy'])
 
 model_mlp.summary()
+
+# toyTensor = tf.cast(tf.range(-10, 10), tf.float32)
+# print(toyTensor)
+# plt.plot(toyTensor)
+# plt.show()
+
+def tensorLogging(dir, testName):
+    logDir = dir+'/'+testName+'/'+datetime.datetime.now().strftime("%m%d%Y%H%M%S")
+    tensorLog = tf.keras.callbacks.TensorBoard(log_dir=logDir)
+    print(f"saving yalls logs to: {logDir}")
+    return tensorLog
+
+checkpoint = 'modelCheckpoint/mlp.ckpt'
+
+
+modelCheckpoint = tf.keras.callbacks.ModelCheckpoint(checkpoint, monitor="val_acc", save_best_only=True,
+    save_weights_only=True, verbose=0)
+
+#  time to train
+mlpTrain = model_mlp.fit(trainDataset, epochs=12, steps_per_epoch=len(trainDataset), validation_data=testDataset,
+    validation_steps=len(testDataset), callbacks=[tensorLogging('training_logs', 'lego_mlp'), modelCheckpoint])
+
+results = model_mlp.evaluate(testDataset)
+results
+
+#  start plotting MLP performance
+def plotLossCurves(history):
+    loss = history.history['loss']
+    valLoss = history.history['val_loss']
+
+    accuracy = history.history['accuracy']
+    valAccuracy = history.history['val_accuracy']
+
+    epochs = range(len(history.history['loss']))
+
+    plt.plot(epochs, loss, label='trainingLoss')
+    plt.plot(epochs, valLoss, label='valLoss')
+    plt.title('Loss')
+    plt.xlabel('Epochs')
+    plt.legend()
+    plt.show()
+
+    plt.figure()
+    plt.plot(epochs, accuracy, label='trainingAccuracy')
+    plt.plot(epochs, valAccuracy, label='valAccuracy')
+    plt.title('accuracy')
+    plt.xlabel('Epochs')
+    plt.legend()
+    plt.show()
+
+plotLossCurves(mlpTrain)
+
+# additional test images (not all square) add a lot of variance in accuracy in the final model
