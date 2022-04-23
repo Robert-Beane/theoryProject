@@ -48,7 +48,7 @@ def tf_load_data(dataframe, batch_size = 32, img_size = IMG_SIZE, directory_path
         dataGenerator = tf.keras.preprocessing.image.ImageDataGenerator()
 
 
-    tf_dataset = dataGenerator.flow_from_dataframe(dataframe, directory = directory_path, x_col = 'PATH', y_col= 'minifigure_name', target_size= (img_size, img_size), batch_size= batch_size,)
+    tf_dataset = dataGenerator.flow_from_dataframe(dataframe, directory = directory_path, x_col = 'path', y_col= 'minifigure_name', target_size= (img_size, img_size), batch_size= batch_size,)
     return tf_dataset
 
 trainDataset = tf_load_data(TRAIN_DATA)
