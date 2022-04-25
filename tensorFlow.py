@@ -8,10 +8,6 @@ import random
 import datetime
 #import tensorflow_hub as hub
 
-#  Setting up static seed
-#static_seed = 420
-# np.seed(static_seed)
-# tf.set_seed(static_seed)
 
 #  Setting up randomized seed
 seed = 420
@@ -83,7 +79,7 @@ model_mlp.summary()
 def tensorLogging(dir, testName):
     logDir = dir+'/'+testName+'/'+datetime.datetime.now().strftime("%m%d%Y%H%M%S")
     tensorLog = tf.keras.callbacks.TensorBoard(log_dir=logDir)
-    print(f"Logging has started and will be outputted to: {logDir}")
+    print(f"Logging has started and will output to: {logDir}")
     return tensorLog
 
 
