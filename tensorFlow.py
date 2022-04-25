@@ -110,7 +110,7 @@ def plotLossCurves(history):
 
     plt.plot(epochs, loss, label='trainingLoss')
     plt.plot(epochs, valLoss, label='valLoss')
-    plt.title('Loss')
+    plt.title('Loss with a seed of '+str(seed))
     plt.xlabel('Epochs')
     plt.legend()
     plt.show()
@@ -118,7 +118,7 @@ def plotLossCurves(history):
     plt.figure()
     plt.plot(epochs, accuracy, label='trainingAccuracy')
     plt.plot(epochs, valAccuracy, label='valAccuracy')
-    plt.title('accuracy')
+    plt.title('Accuracy with a seed of '+str(seed))
     plt.xlabel('Epochs')
     plt.legend()
     plt.show()
