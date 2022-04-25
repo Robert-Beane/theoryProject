@@ -5,7 +5,7 @@ import cv2
 
 index = pd.read_csv('index.csv')
 df = index.copy()
-#image = cv2.imread('harry-potter/0001/001.jpg')
+#image = cv2.imread('other/0001/001.jpg')
 # print(df['path'])
 
 for imgPath in df.itertuples():  # Normalizes all images included in index.csv
