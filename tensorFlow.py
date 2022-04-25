@@ -83,7 +83,7 @@ model_mlp.summary()
 def tensorLogging(dir, testName):
     logDir = dir+'/'+testName+'/'+datetime.datetime.now().strftime("%m%d%Y%H%M%S")
     tensorLog = tf.keras.callbacks.TensorBoard(log_dir=logDir)
-    print(f"saving yalls logs to: {logDir}")
+    print(f"Logging has started and will be outputted to: {logDir}")
     return tensorLog
 
 
@@ -98,7 +98,7 @@ mlpTrain = model_mlp.fit(trainDataset, epochs=12, steps_per_epoch=len(trainDatas
                          validation_steps=len(testDataset), callbacks=[tensorLogging('training_logs', 'lego_mlp'), modelCheckpoint])
 
 results = model_mlp.evaluate(testDataset)
-results
+print(results)
 
 #  start plotting MLP performance
 
