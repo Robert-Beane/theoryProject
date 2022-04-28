@@ -166,8 +166,6 @@ tf.keras.utils.plot_model(model_tiny_vgg, "model.png", show_shapes=True, show_la
 
 model_tiny_vgg.summary()
 
-tf.random.set_seed(563)
-
 history_tiny_vgg = model_tiny_vgg.fit(trainDataset,
                                       epochs=12,
                                       steps_per_epoch=len(trainDataset),
