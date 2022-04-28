@@ -40,7 +40,7 @@ TEST_DATA = TEST_DATA.merge(METADATA, on='class_id')
 print(TRAIN_DATA.head())
 
 PATH = '../theoryProject/'
-IMG_SIZE = 512
+IMG_SIZE = 256
 
 
 def tf_load_data(dataframe, batch_size=32, img_size=IMG_SIZE, directory_path=PATH, rescale=True):
@@ -168,15 +168,15 @@ model_tiny_vgg.summary()
 
 tf.random.set_seed(563)
 
-history_tiny_vgg = model_tiny_vgg.fit(TRAIN_DATA,
+history_tiny_vgg = model_tiny_vgg.fit(trainDataset,
                                       epochs=12,
-                                      steps_per_epoch=len(TRAIN_DATA),
-                                      validation_data=TEST_DATA,
-                                      validation_steps=len(TEST_DATA),
+                                      steps_per_epoch=len(trainDataset),
+                                      validation_data=testDataset,
+                                      validation_steps=len(testDataset),
                                       callbacks=[tensorLogging('training_logs', 'lego_tiny_vgg'),
                                                  modelCheckpoint])
 
-results_tiny_vgg = model_tiny_vgg.evaluate(TEST_DATA)
+results_tiny_vgg = model_tiny_vgg.evaluate(testDataset)
 print(results_tiny_vgg)
 
 plotLossCurves(history_tiny_vgg)
