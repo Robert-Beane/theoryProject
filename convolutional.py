@@ -8,15 +8,9 @@ import matplotlib.pyplot as plt
 import random
 import datetime
 
-# import tensorflow_hub as hub
-
-#  Setting up static seed
-# static_seed = 420
-# np.seed(static_seed)
-# tf.set_seed(static_seed)
 
 #  Setting up randomized seed
-seed = 420
+seed = 666
 random.seed(seed)
 np.random.seed(seed)
 
@@ -59,32 +53,8 @@ def tf_load_data(dataframe, batch_size=32, img_size=IMG_SIZE, directory_path=PAT
 trainDataset = tf_load_data(TRAIN_DATA)
 testDataset = tf_load_data(TEST_DATA)
 
-#  begin MLP (multilayer perception) model
 
-tf.random.set_seed(seed)  # seed is 420
-
-model_mlp = tf.keras.Sequential([
-    tf.keras.layers.Input(shape=(trainDataset.image_shape), name='input'),
-    tf.keras.layers.Flatten(name='flatten'),
-    tf.keras.layers.Dense(100, activation='relu', name='first_hidden_layer'),
-    tf.keras.layers.Dense(64, activation='relu', name='second_hidden_layer'),
-    tf.keras.layers.Dense(36, activation='softmax', name='output_layer')
-], name='MLP')
-
-model_mlp.compile(loss=tf.keras.losses.CategoricalCrossentropy(),
-                  optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3),
-                  metrics=['accuracy'])
-
-model_mlp.summary()
-
-
-# toyTensor = tf.cast(tf.range(-10, 10), tf.float32)
-# print(toyTensor)
-# plt.plot(toyTensor)
-# plt.show()
-
-
-def tensorLogging(dir, testName):
+def tensorLogging(dir, testName):  # logs tensorflow related actions
     logDir = dir + '/' + testName + '/' + datetime.datetime.now().strftime("%m%d%Y%H%M%S")
     tensorLog = tf.keras.callbacks.TensorBoard(log_dir=logDir)
     print(f"Logging has started and will be outputted to: {logDir}")
@@ -97,17 +67,6 @@ checkpoint = 'modelCheckpoint/mlp.ckpt'
 modelCheckpoint = tf.keras.callbacks.ModelCheckpoint(checkpoint, monitor="val_accuracy", save_best_only=True,
                                                      save_weights_only=True, verbose=0)
 
-#  time to train
-mlpTrain = model_mlp.fit(trainDataset, epochs=12, steps_per_epoch=len(trainDataset), validation_data=testDataset,
-                         validation_steps=len(testDataset),
-                         callbacks=[tensorLogging('training_logs', 'lego_mlp'), modelCheckpoint])
-
-results = model_mlp.evaluate(testDataset)
-print(results)
-
-
-#  start plotting MLP performance
-
 
 def plotLossCurves(history):
     loss = history.history['loss']
@@ -118,32 +77,27 @@ def plotLossCurves(history):
 
     epochs = range(len(history.history['loss']))
 
-    plt.plot(epochs, loss, label='trainingLoss')
-    plt.plot(epochs, valLoss, label='valLoss')
-    plt.title('Loss')
+    plt.plot(epochs, loss, label='trainingLoss')  # training loss
+    plt.plot(epochs, valLoss, label='valLoss')  # validation loss
+    plt.title('Loss with a seed of '+str(seed))
     plt.xlabel('Epochs')
     plt.legend()
     plt.show()
 
     plt.figure()
-    plt.plot(epochs, accuracy, label='trainingAccuracy')
-    plt.plot(epochs, valAccuracy, label='valAccuracy')
-    plt.title('Accuracy')
+    plt.plot(epochs, accuracy, label='trainingAccuracy')  # training accuracy
+    plt.plot(epochs, valAccuracy, label='valAccuracy')  # validation accuracy
+    plt.title('Accuracy with a seed of '+str(seed))
     plt.xlabel('Epochs')
     plt.legend()
     plt.show()
 
-
-plotLossCurves(mlpTrain)
-
 # Convolutional network:
-print("==========================================================================================================")
-print("")
-print("CONVOLUTIONAL NETWORK BEGINS HERE!")
-print("")
-print("==========================================================================================================")
+print("=========================================================================================================="
+      "\n\nCONVOLUTIONAL NETWORK BEGINS HERE!\n\n==========================================================================================================")
 
-tf.random.set_seed(666)
+
+tf.random.set_seed(seed)  # takes a random seed
 
 inputs = tf.keras.layers.Input(shape=trainDataset.image_shape, name='input')
 
@@ -177,6 +131,6 @@ history_tiny_vgg = model_tiny_vgg.fit(trainDataset,
 results_tiny_vgg = model_tiny_vgg.evaluate(testDataset)
 print(results_tiny_vgg)
 
-plotLossCurves(history_tiny_vgg)
+plotLossCurves(history_tiny_vgg)  # plots the performance
 
 # additional test images (not all square) add a lot of variance in accuracy in the final model
