@@ -5,4 +5,5 @@ Dataset Source : [Kaggle LEGO minifigures](https://www.kaggle.com/datasets/ihelo
 
 ### Files
 * [trainingNormalize.py](normalizeTraining.py)  - Normalizes all of the images contained din the training folders.
-* [tensorFlow.py](tensorFlow.py)  - Runs the TensorFlow implementation.
+* [multiLayer.py](multiLayer.py)  - Runs implementation of Multi Layer Perceptron (low accuracy).
+* [convolutional.py](convolutional.py)  - Runs the CNN for the LEGO dataset
