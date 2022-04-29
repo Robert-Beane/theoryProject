@@ -1,7 +1,7 @@
 #  start of main training
 import pandas as pd
 import os
-os.environ["PATH"] += os.pathsep + 'C:/Program Files/Graphviz/bin/'
+os.environ["PATH"] += os.pathsep + 'C:/Program Files/Graphviz/bin/'  # Update this if you didnt install Graphviz to Program Files
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
@@ -33,7 +33,7 @@ TRAIN_DATA = TRAIN_DATA.merge(METADATA, on='class_id')
 TEST_DATA = TEST_DATA.merge(METADATA, on='class_id')
 print(TRAIN_DATA.head())
 
-PATH = '../theoryProject/'
+PATH = '../theoryProject/'  # make sure this path is accurate to your own install
 IMG_SIZE = 256
 
 
