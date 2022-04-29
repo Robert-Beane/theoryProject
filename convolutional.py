@@ -14,7 +14,7 @@ import datetime
 
 
 #  Setting up randomized seed
-seed = 666
+seed = 4660
 random.seed(seed)
 np.random.seed(seed)
 
