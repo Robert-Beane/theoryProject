@@ -11,6 +11,6 @@ To do so, run the following command in your terminal.
 You also must install Graphviz which can be done [here](https://graphviz.org/download/).
 
 ### Files
-* [trainingNormalize.py](normalizeTraining.py)  - Normalizes all of the images contained din the training folders.
+* [normalizeTraining.py](normalizeTraining.py)  - Normalizes all of the images contained din the training folders.
 * [multiLayer.py](multiLayer.py)  - Runs implementation of Multi Layer Perceptron (low accuracy).
 * [convolutional.py](convolutional.py)  - Runs the CNN for the LEGO dataset
