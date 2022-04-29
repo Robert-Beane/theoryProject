@@ -3,7 +3,7 @@ import pandas as pd
 import cv2
 
 
-index = pd.read_csv('indexDUP.csv')
+index = pd.read_csv('index.csv')
 df = index.copy()
 #image = cv2.imread('other/0001/001.jpg')
 # print(df['path'])

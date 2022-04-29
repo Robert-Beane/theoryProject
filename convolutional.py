@@ -18,7 +18,7 @@ seed = 4660
 random.seed(seed)
 np.random.seed(seed)
 
-TRAIN_DATA = pd.read_csv('indexDUP.csv')
+TRAIN_DATA = pd.read_csv('index.csv')
 TEST_DATA = pd.read_csv('test.csv')
 METADATA = pd.read_csv('metadata.csv')
 
