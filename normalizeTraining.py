@@ -3,12 +3,12 @@ import pandas as pd
 import cv2
 
 
-index = pd.read_csv('index.csv')
+index = pd.read_csv('indexDUP.csv')
 df = index.copy()
 #image = cv2.imread('other/0001/001.jpg')
 # print(df['path'])
 
-for imgPath in df.itertuples():  # Normalizes all images included in index.csv
+for imgPath in df.itertuples():  # Normalizes all images included in indexDUP.csv
     path = imgPath[1]
     # print(path)
     image = cv2.imread(path)

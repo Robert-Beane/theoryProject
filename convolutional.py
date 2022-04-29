@@ -14,11 +14,11 @@ import datetime
 
 
 #  Setting up randomized seed
-seed = 666
+seed = 4660
 random.seed(seed)
 np.random.seed(seed)
 
-TRAIN_DATA = pd.read_csv('index.csv')
+TRAIN_DATA = pd.read_csv('indexDUP.csv')
 TEST_DATA = pd.read_csv('test.csv')
 METADATA = pd.read_csv('metadata.csv')
 
