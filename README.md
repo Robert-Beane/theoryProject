@@ -18,10 +18,22 @@ You also must install Graphviz which can be done [here](https://graphviz.org/dow
 ## Overview
 
 ### Design Matrix
-Our design matrix consists of three categories of Lego minifigures: Star Wars, Marvel, and other. From there, 37 subcategories are distributed among them, numbered starting at 0001 and generally consisting of less than thirty 512 by 512 images a piece (after duplication). These subcategories identify characters that Lego has made minifigures for (e.g., Yoda, Captain America, Harry Potter, etc.). They are preprocessed before training through normalization and downsizing by a scale of two. It is possible to run the neural network without any preprocessing, but this significantly increases the training and validation times.
+Our design matrix consists of three categories of Lego minifigures: Star Wars, Marvel, and other. From there, 37 subcategories are distributed among them, numbered starting at 0001 and generally consisting of less than thirty 512 by 512 images a piece (after duplication). These subcategories identify characters that Lego has made minifigures for (e.g., Yoda, Captain America, Harry Potter, etc.). To identify them more broadly, each category is labeled with a number from 1-37 in the metadata csv file.
 
-### Process Description
+The images are preprocessed before training through normalization and downsizing by a scale of two (i.e., 512 x 512 down to 256 x 256). It is possible to run the neural network without any preprocessing, but this significantly increases the training and validation times, as well as the quality of results.
 
-### Results
+### Goals and Hypothesis
 
-### Challenges
+Our primary goal with this project was to be able to accurately process the training and validation data above a threshold of 20%. Our hypothesis was that we would eventually be able to balance out these accuracies through tweaks to our neural network design (different filter counts, activation functions, kernel sizes, etc.).
+
+### Project Methods
+
+### Training Process
+
+## Design Process
+
+## Results
+
+## Challenges
+
+## Opportunities for Improvement
