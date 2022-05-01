@@ -11,9 +11,9 @@ To do so, run the following command in your terminal.
 You also must install Graphviz which can be done [here](https://graphviz.org/download/).
 
 ### Files
-* [normalizeTraining.py](normalizeTraining.py)  - Normalizes all of the images contained din the training folders.
+* [normalizeTraining.py](normalizeTraining.py)  - Normalizes all of the images contained in the training folders.
 * [multiLayer.py](multiLayer.py)  - Runs implementation of Multi Layer Perceptron (low accuracy).
-* [convolutional.py](convolutional.py)  - Runs the CNN for the LEGO dataset; the main implementation.
+* [convolutional.py](convolutional.py)  - Runs the CNN for the LEGO dataset; the final, main implementation.
 
 ## Overview
 
@@ -27,6 +27,8 @@ The images are preprocessed before training through normalization and downsizing
 Our primary goal with this project was to be able to accurately process the training and validation data above a threshold of 20%. Our hypothesis was that we would eventually be able to balance out these accuracies through tweaks to our neural network design (different filter counts, activation functions, kernel sizes, etc.).
 
 ### Project Methods
+
+Our final implementation utilizes a CNN (convolutional neural network) to train and validate data. This neural network is particulary effective for image processing. Images consist of multidimenionsal data which can be quite complex to process and analyze. CNNs are able to reduce the dimensionality of images by taking portions of the data and filtering it through their networks of layers. A great amount of precision can be acquired by implementing a CNN structure. Once we did this for our own project, our training data went from being ~5% accurate to ~%90 accurate.
 
 ### Training Process
 
