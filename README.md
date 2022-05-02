@@ -8,7 +8,7 @@
 * [Overview](#Overview)
     * [Design Matrix](#Design-Matrix)
     * [Sample Rows](#Sample-Rows)
-    & [Model Summary](#Model-Summary)
+    * [Model Summary](#Model-Summary)
     * [Goals and Hypothesis](#Goals-and-Hypothesis)
     * [Project Methods](#Project-Methods)
     * [Training Process](#Training-Process)
@@ -40,7 +40,7 @@ Our design matrix consists of three categories of Lego minifigures: Star Wars, M
 
 The images are preprocessed before training through normalization and downsizing by a scale of two (i.e., 512 x 512 down to 256 x 256). It is possible to run the neural network without any preprocessing, but this significantly increases the training and validation times, as well as the quality of results.
 
-#### Sample Rows
+### Sample Rows
 #### ```index.csv```
 |path               |class_id|
 |-------------------|--------|
@@ -102,6 +102,24 @@ Our final implementation utilizes a CNN (convolutional neural network) to train 
 ## Design Process
 
 ## Results
+
+When running our network we discovered that our accuracy is pretty high and our loss is pretty low. However, our validation accuracy is realtively low compared to training and our validation loss is much higher than the training loss.
+Because of this observation, we tried duplicating our testing data so that we have a higher percentage of training vs testing. For accuracy, we discovered that the accuracy rose quicker than before but our validation accuracy was still low. 
+The same could be said for the training loss and validation loss. Our results for each case can be seen in the charts below.
+#### ```Loss (not duplicated training data)```
+![Loss chart for a seed of 4660 without duplicated training data](4660LossTrain.png)
+
+#### ```Accuracy (not duplicated training data)```
+![Accuracy chart for a seed of 4660 without duplicated training data](4660AccuracyTrain.png)
+
+#### ```Loss (duplicated training data)```
+![Loss chart for a seed of 4660 with duplicated training data](4660LossDuplicatedTrain.png)
+
+#### ```Accuracy (duplicated training data)```
+![Accuracy chart for a seed of 4660 with duplicated training data](4660AcurracyDuplicatedTrain.png)
+
+We think this is a result of overfitting. We believe this is due to the number of categories we have and how we only have a couple of images per category.
+If our dataset had more images of each minifig, we think that we could get our validation accuracy higher and our validation loss lower.
 
 ## Challenges
 
