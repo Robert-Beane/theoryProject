@@ -78,3 +78,30 @@ Our final implementation utilizes a CNN (convolutional neural network) to train 
 ## Challenges
 
 ## Opportunities for Improvement
+
+
+```
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input (InputLayer)          [(None, 256, 256, 3)]     0         
+                                                                 
+ conv_1_1 (Conv2D)           (None, 254, 254, 10)      280       
+                                                                 
+ conv_1_2 (Conv2D)           (None, 252, 252, 10)      910       
+                                                                 
+ max_pool_1 (MaxPooling2D)   (None, 126, 126, 10)      0         
+                                                                 
+ conv_2_1 (Conv2D)           (None, 124, 124, 10)      910       
+                                                                 
+ conv_2_2 (Conv2D)           (None, 122, 122, 10)      910       
+                                                                 
+ max_pool_2 (MaxPooling2D)   (None, 61, 61, 10)        0         
+                                                                 
+ flatten_layer (Flatten)     (None, 37210)             0         
+                                                                 
+ output_layer (Dense)        (None, 36)                1339596   
+                                                                 
+=================================================================
+```
