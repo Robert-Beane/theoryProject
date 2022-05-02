@@ -1,7 +1,7 @@
 # Detecting LEGO minifigures with TensorFlow
 ## Robert Beane, Kyle Day, Jacob Jenness
 
-#Table of Contents
+# Table of Contents
 * [LEGO Dataset](#Dataset)
 * [First Run Instructions](#First-Run-Instructions)
 * [File Overview](#Files)
