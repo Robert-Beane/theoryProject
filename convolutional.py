@@ -9,7 +9,7 @@ import random
 import datetime
 
 # We used this tutorial for the creation of our CNN
-# https://www.kaggle.com/code/danielbeltran/learning-deep-learning-tensorflow-with-lego/notebook#First-model:-Multilayer-Perceptron-(MLP)
+# https://www.kaggle.com/code/danielbeltran/learning-deep-learning-tensorflow-with-lego/notebook
 # we changed our seed and experimented with other variables
 
 
