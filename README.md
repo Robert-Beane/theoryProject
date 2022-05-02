@@ -22,6 +22,26 @@ Our design matrix consists of three categories of Lego minifigures: Star Wars, M
 
 The images are preprocessed before training through normalization and downsizing by a scale of two (i.e., 512 x 512 down to 256 x 256). It is possible to run the neural network without any preprocessing, but this significantly increases the training and validation times, as well as the quality of results.
 
+#### Sample Rows
+#### ```index.csv```
+|path               |class_id|
+|-------------------|--------|
+|marvel/0001/001.jpg|1       |
+|marvel/0001/002.jpg|1       |
+|marvel/0001/003.jpg|1       |
+#### ```test.csv```
+|path               |class_id|
+|-------------------|--------|
+|test/001.jpg       |32      |
+|test/002.jpg       |32      |
+|test/003.jpg       |32      |
+#### ```metadata.csv```
+|class_id           |lego_ids|lego_names               |minifigure_name|
+|-------------------|--------|-------------------------|---------------|
+|1                  |[76115] |['Spider Mech vs. Venom']|SPIDER-MAN     |
+|2                  |[76115] |['Spider Mech vs. Venom']|VENOM          |
+|3                  |[76115] |['Spider Mech vs. Venom']|AUNT MAY       |
+
 ### Goals and Hypothesis
 
 Our primary goal with this project was to be able to accurately process the training and validation data above a threshold of 20%. Our hypothesis was that we would eventually be able to balance out these accuracies through tweaks to our neural network design (different filter counts, activation functions, kernel sizes, etc.).
