@@ -1,5 +1,22 @@
 # Detecting LEGO minifigures with TensorFlow
+## Robert Beane, Kyle Day, Jacob Jenness
 
+#Table of Contents
+* [LEGO Dataset](#Dataset)
+* [First Run Instructions](#First-Run-Instructions)
+* [File Overview](#Files)
+* [Overview](#Overview)
+    * [Design Matrix](#Design-Matrix)
+    * [Sample Rows](#Sample-Rows)
+    * [Goals and Hypothesis](#Goals-and-Hypothesis)
+    * [Project Methods](#Project-Methods)
+    * [Training Process](#Training-Process)
+* [Design Process](#Design-Process)
+* [Results](#Results)
+* [Challenges](#Challenges)
+* [Opportunities for Improvement](#Opportunites-forImprovement)
+
+## Dataset
 Dataset Source : [Kaggle LEGO minifigures](https://www.kaggle.com/datasets/ihelon/lego-minifigures-classification)
 
 ## First Run Instructions
@@ -10,7 +27,7 @@ To do so, run the following command in your terminal.
 
 You also must install Graphviz which can be done [here](https://graphviz.org/download/).
 
-### Files
+## Files
 * [normalizeTraining.py](normalizeTraining.py)  - Normalizes all of the images contained in the training folders.
 * [multiLayer.py](multiLayer.py)  - Runs implementation of Multi Layer Perceptron (low accuracy).
 * [convolutional.py](convolutional.py)  - Runs the CNN for the LEGO dataset; the final, main implementation.
@@ -29,12 +46,14 @@ The images are preprocessed before training through normalization and downsizing
 |marvel/0001/001.jpg|1       |
 |marvel/0001/002.jpg|1       |
 |marvel/0001/003.jpg|1       |
+
 #### ```test.csv```
 |path               |class_id|
 |-------------------|--------|
 |test/001.jpg       |32      |
 |test/002.jpg       |32      |
 |test/003.jpg       |32      |
+
 #### ```metadata.csv```
 |class_id           |lego_ids|lego_names               |minifigure_name|
 |-------------------|--------|-------------------------|---------------|
