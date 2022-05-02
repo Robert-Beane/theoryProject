@@ -13,6 +13,8 @@
     * [Project Methods](#Project-Methods)
     * [Training Process](#Training-Process)
 * [Design Process](#Design-Process)
+    * [Code Tinkering](#Code-Tinkering)
+    * [Regularization Attempts](#Regularization-Attempts)
 * [Results](#Results)
 * [Challenges](#Challenges)
 
