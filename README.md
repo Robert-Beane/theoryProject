@@ -15,7 +15,6 @@
 * [Design Process](#Design-Process)
 * [Results](#Results)
 * [Challenges](#Challenges)
-* [Opportunities for Improvement](#Opportunites-for-Improvement)
 
 ## Dataset
 Dataset Source : [Kaggle LEGO minifigures](https://www.kaggle.com/datasets/ihelon/lego-minifigures-classification)
@@ -125,5 +124,5 @@ The same could be said for the training loss and validation loss. Our results fo
 We think this is a result of overfitting. We believe this is due to the number of categories we have and how we only have a few images per category.
 If our dataset had more images of each minifig, we think that we could get our validation accuracy higher and our validation loss lower.
 
-## Challenge
+## Challenges
 Our main challenge was working with as little data as we had. The best image recognition neural networks take in thousands images for training and validation each - but this data set only has a few hundred images. While we managed to significantly upgrade our training accuracy in the development of the CNN, there always seemed to be a low asymptote which our validation data could never go over once we reached a certain threshold. The most substantial way to improve this model would be to find more images of minifigures included to train on and validate.
