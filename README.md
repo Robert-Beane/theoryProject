@@ -1,4 +1,4 @@
-# Detecting LEGO minifigures with TensorFlow
+# Detecting LEGO Minifigures with TensorFlow
 ## Robert Beane, Kyle Day, Jacob Jenness
 
 # Table of Contents
@@ -17,7 +17,7 @@
 * [Challenges](#Challenges)
 
 ## Dataset
-Dataset Source : [Kaggle LEGO minifigures](https://www.kaggle.com/datasets/ihelon/lego-minifigures-classification)
+Dataset Source : [Kaggle LEGO Minifigures](https://www.kaggle.com/datasets/ihelon/lego-minifigures-classification)
 
 ## First Run Instructions
 Before you can run the Convolutional Neural Network (CNN), you have to install the required dependencies.
@@ -28,14 +28,15 @@ To do so, run the following command in your terminal.
 You also must install Graphviz which can be done [here](https://graphviz.org/download/).
 
 ## Files
-* [normalizeTraining.py](normalizeTraining.py)  - Normalizes all of the images contained in the training folders.
+* [normalizeTraining.py](normalizeTraining.py)  - Script for normalizing images, was not used in the final CNN.
 * [multiLayer.py](multiLayer.py)  - Runs implementation of Multi Layer Perceptron (low accuracy).
 * [convolutional.py](convolutional.py)  - Runs the CNN for the LEGO dataset; the final, main implementation.
 
 ## Overview
 
 ### Design Matrix
-Our design matrix consists of three categories of Lego minifigures: Star Wars, Marvel, and other. From there, 37 subcategories are distributed among them, numbered starting at 0001 and generally consisting of less than thirty 512 by 512 images a piece (after duplication). These subcategories identify characters that Lego has made minifigures for (e.g., Yoda, Captain America, Harry Potter, etc.). To identify them more specifically, each subcategory is labeled with a number from 1-37 in the three CSV files included.
+Our design matrix consists of three categories of LEGO Minifigures: Star Wars, Marvel, and other. From there, 37 subcategories are distributed among them, numbered starting at 0001 and generally consisting of less than thirty 512 by 512 images a piece (after duplication). 
+These subcategories identify characters that LEGO has made Minifigures for (e.g., Yoda, Captain America, Harry Potter, etc.). To identify them more specifically, each subcategory is labeled with a number from 1-37 in the three CSV files included.
 
 The images are preprocessed before training through downsizing by a scale of two (i.e., 512 x 512 down to 256 x 256). It is possible to run the neural network without any preprocessing, but this significantly increases the training and validation times, as well as the quality of results.
 
@@ -94,7 +95,8 @@ Our primary goal with this project was to be able to accurately process the trai
 
 ### Project Methods
 
-Our final implementation utilizes a CNN (convolutional neural network) to train and validate data. This neural network is particulary effective for image processing. Images consist of multidimenionsal data which can be quite complex to process and analyze. CNNs are able to reduce the dimensionality of images by taking portions of the data and filtering it through their networks of layers. A great amount of precision can be acquired by implementing a CNN structure. Once we did this for our own project, our training data went from being ~5% accurate to ~%90 accurate.
+Our final implementation utilizes a CNN (convolutional neural network) to train and validate data. This neural network is particulary effective for image processing. Images consist of multidimensional data which can be quite complex to process and analyze. 
+CNNs are able to reduce the dimensionality of images by taking portions of the data and filtering it through their networks of layers. A great amount of precision can be acquired by implementing a CNN structure. Once we did this for our own project, our training data went from being ~5% accurate to ~90% accurate.
 
 ### Training Process
 
@@ -110,19 +112,20 @@ When running our network we discovered that our accuracy is pretty high and our 
 Because of this observation, we tried duplicating our testing data so that we have a higher percentage of training vs testing. For accuracy, we discovered that the accuracy rose quicker than before but our validation accuracy was still low. 
 The same could be said for the training loss and validation loss. Our results for each case can be seen in the charts below.
 #### ```Loss (not duplicated training data)```
-![Loss chart for a seed of 4660 without duplicated training data](4660LossTrain.png)
+![Loss chart for a seed of 4660 without duplicated training data](Charts/4660LossTrain.png)
 
 #### ```Accuracy (not duplicated training data)```
-![Accuracy chart for a seed of 4660 without duplicated training data](4660AccuracyTrain.png)
+![Accuracy chart for a seed of 4660 without duplicated training data](Charts/4660AccuracyTrain.png)
 
 #### ```Loss (duplicated training data)```
-![Loss chart for a seed of 4660 with duplicated training data](4660LossDuplicatedTrain.png)
+![Loss chart for a seed of 4660 with duplicated training data](Charts/4660LossDuplicatedTrain.png)
 
 #### ```Accuracy (duplicated training data)```
-![Accuracy chart for a seed of 4660 with duplicated training data](4660AcurracyDuplicatedTrain.png)
+![Accuracy chart for a seed of 4660 with duplicated training data](Charts/4660AcurracyDuplicatedTrain.png)
 
 We think this is a result of overfitting. We believe this is due to the number of categories we have and how we only have a few images per category.
 If our dataset had more images of each minifig, we think that we could get our validation accuracy higher and our validation loss lower.
 
 ## Challenges
-Our main challenge was working with as little data as we had. The best image recognition neural networks take in thousands images for training and validation each - but this data set only has a few hundred images. While we managed to significantly upgrade our training accuracy in the development of the CNN, there always seemed to be a low asymptote which our validation data could never go over once we reached a certain threshold. The most substantial way to improve this model would be to find more images of minifigures included to train on and validate.
+Our main challenge was working with as little data as we had. The best image recognition neural networks take in thousands images for training and validation each - but this data set only has a few hundred images. While we managed to significantly upgrade our training accuracy in the development of the CNN, 
+there always seemed to be a low asymptote which our validation data could never go over once we reached a certain threshold. The most substantial way to improve this model would be to find more images of Minifigures included to train on and validate.
