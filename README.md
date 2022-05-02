@@ -36,9 +36,9 @@ You also must install Graphviz which can be done [here](https://graphviz.org/dow
 ## Overview
 
 ### Design Matrix
-Our design matrix consists of three categories of Lego minifigures: Star Wars, Marvel, and other. From there, 37 subcategories are distributed among them, numbered starting at 0001 and generally consisting of less than thirty 512 by 512 images a piece (after duplication). These subcategories identify characters that Lego has made minifigures for (e.g., Yoda, Captain America, Harry Potter, etc.). To identify them more broadly, each category is labeled with a number from 1-37 in the metadata csv file.
+Our design matrix consists of three categories of Lego minifigures: Star Wars, Marvel, and other. From there, 37 subcategories are distributed among them, numbered starting at 0001 and generally consisting of less than thirty 512 by 512 images a piece (after duplication). These subcategories identify characters that Lego has made minifigures for (e.g., Yoda, Captain America, Harry Potter, etc.). To identify them more specifically, each subcategory is labeled with a number from 1-37 in the three CSV files included.
 
-The images are preprocessed before training through normalization and downsizing by a scale of two (i.e., 512 x 512 down to 256 x 256). It is possible to run the neural network without any preprocessing, but this significantly increases the training and validation times, as well as the quality of results.
+The images are preprocessed before training through downsizing by a scale of two (i.e., 512 x 512 down to 256 x 256). It is possible to run the neural network without any preprocessing, but this significantly increases the training and validation times, as well as the quality of results.
 
 ### Sample Rows
 #### ```index.csv```
@@ -118,9 +118,8 @@ The same could be said for the training loss and validation loss. Our results fo
 #### ```Accuracy (duplicated training data)```
 ![Accuracy chart for a seed of 4660 with duplicated training data](4660AcurracyDuplicatedTrain.png)
 
-We think this is a result of overfitting. We believe this is due to the number of categories we have and how we only have a couple of images per category.
+We think this is a result of overfitting. We believe this is due to the number of categories we have and how we only have a few images per category.
 If our dataset had more images of each minifig, we think that we could get our validation accuracy higher and our validation loss lower.
 
-## Challenges
-
-## Opportunities for Improvement
+## Challenge
+Our main challenge was working with as little data as we had. The best image recognition neural networks take in thousands images for training and validation each - but this data set only has a few hundred images. While we managed to significantly upgrade our training accuracy in the development of the CNN, there always seemed to be a low asymptote which our validation data could never go over once we reached a certain threshold. The most substantial way to improve this model would be to find more images of minifigures included to train on and validate.
