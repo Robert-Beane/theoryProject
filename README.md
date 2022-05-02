@@ -111,6 +111,7 @@ A few settings were altered briefly to examine how certain aspects of our code a
 
 #### Changing Activation Functions
 In one test, the final activation function was changed from softmax to sigmoid. This modification appeared to prolong the validation loss and delay the training loss. In addition, it appeared to increase our validation accuracy slightly.
+
 ```Loss (sigmoid output)```
 ![Loss chart for a seed of 4660 with sigmoid output](https://github.com/Robert-Beane/theoryProject/blob/scrape-for-test-data/Data%20Figures/Resplit%20-%208%20Images%20per%20Training%20Subcategory/Seed%20of%204660/ReLU-ReLU%3B%20ReLU-ReLU%20to%20Sigmoid/Loss.png)
 
@@ -119,11 +120,27 @@ In one test, the final activation function was changed from softmax to sigmoid. 
 
 In another test, we changed an couple of instances of ReLU activation layers to sigmoid, while maintaining a softmax output. While this eventually lead to a loss of zero for both training and validation, it tanked accuracy across the board.
 
+```Loss (sigmoid activation)```
 ![Loss chart for a seed of 4660 with sigmoid functions](https://github.com/Robert-Beane/theoryProject/blob/scrape-for-test-data/Data%20Figures/Resplit%20-%208%20Images%20per%20Training%20Subcategory/Seed%20of%204660/ReLU-Sigmoid%3B%20ReLU-Sigmoid%20to%20Softmax/Loss.png)
 
+```Accuracy (sigmoid activation)```
 ![Accuracy chart for a seed of 4660 with sigmoid functions](https://github.com/Robert-Beane/theoryProject/blob/scrape-for-test-data/Data%20Figures/Resplit%20-%208%20Images%20per%20Training%20Subcategory/Seed%20of%204660/ReLU-Sigmoid%3B%20ReLU-Sigmoid%20to%20Softmax/Accuracy.png)
 
-#### Changing Filter Amounts
+#### Changing Kernel Sizes
+The kernel amounts were also modified, with one test setting them to 1 and another test setting them to 5. A run with a kernel size of 1 was much faster to process, but there was little benefit. A run with a kernel size of 5 was much slower to process, but it proved to be detrimental.
+
+```Loss (kernel size of 1)```
+![Loss chart for a seed of 4660 with a kernel size of 1](https://github.com/Robert-Beane/theoryProject/blob/scrape-for-test-data/Data%20Figures/Resplit%20-%208%20Images%20per%20Training%20Subcategory/Seed%20of%204660/Standard/Kernel%20Size%20of%201%20(Much%20Faster)/Loss.png)
+
+```Accuracy (kernel size of 1)```
+[Accuracy chart for a seed of 4660 with a kernel size of 1](https://github.com/Robert-Beane/theoryProject/blob/scrape-for-test-data/Data%20Figures/Resplit%20-%208%20Images%20per%20Training%20Subcategory/Seed%20of%204660/Standard/Kernel%20Size%20of%201%20(Much%20Faster)/Accuracy.png)
+
+```Loss (kernel size of 5)```
+![Loss chart for a seed of 4660 with kernel size of 5](https://github.com/Robert-Beane/theoryProject/blob/scrape-for-test-data/Data%20Figures/Resplit%20-%208%20Images%20per%20Training%20Subcategory/Seed%20of%204660/Standard/Kernel%20Size%20of%205%20(Slower)/Loss.png)
+
+```Accuracy (kernel size of 5)```
+[Accuracy chart for a seed of 4660 with kernel size of 5](https://github.com/Robert-Beane/theoryProject/blob/scrape-for-test-data/Data%20Figures/Resplit%20-%208%20Images%20per%20Training%20Subcategory/Seed%20of%204660/Standard/Kernel%20Size%20of%205%20(Slower)/Accuracy.png)
+
 
 ### Regularization Attempts
 
