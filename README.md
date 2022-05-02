@@ -99,11 +99,15 @@ Our final implementation utilizes a CNN (convolutional neural network) to train 
 
 ### Training Process
 
+Our dataset already came with a set for training (```index.csv```) that contained the ```class_id``` and ```path``` for the image. The set already came with a pre-done testing dataset (```test.csv```)
+This file had the same format as ```index.csv``` but consisted of randomly selected images of specific characters. We attempted adding our own images of the same characters to the training dataset
+but found that our accuracy became much more inconsistent. We also decided to use our testing dataset as our validation dataset. This could also be a cause for the low validation accuracy we see in our network.
+
 ## Design Process
 
 ## Results
 
-When running our network we discovered that our accuracy is pretty high and our loss is pretty low. However, our validation accuracy is realtively low compared to training and our validation loss is much higher than the training loss.
+When running our network we discovered that our accuracy is pretty high and our loss is pretty low. However, our validation accuracy is relatively low compared to training and our validation loss is much higher than the training loss.
 Because of this observation, we tried duplicating our testing data so that we have a higher percentage of training vs testing. For accuracy, we discovered that the accuracy rose quicker than before but our validation accuracy was still low. 
 The same could be said for the training loss and validation loss. Our results for each case can be seen in the charts below.
 #### ```Loss (not duplicated training data)```
