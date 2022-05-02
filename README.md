@@ -147,7 +147,7 @@ The kernel amounts were also modified, with one test setting them to 1 and anoth
 
 ```Accuracy (kernel size of 1)```
 
-[Accuracy chart for a seed of 4660 with a kernel size of 1](https://github.com/Robert-Beane/theoryProject/blob/scrape-for-test-data/Data%20Figures/Resplit%20-%208%20Images%20per%20Training%20Subcategory/Seed%20of%204660/Standard/Kernel%20Size%20of%201%20(Much%20Faster)/Accuracy.png)
+![Accuracy chart for a seed of 4660 with a kernel size of 1](https://github.com/Robert-Beane/theoryProject/blob/scrape-for-test-data/Data%20Figures/Resplit%20-%208%20Images%20per%20Training%20Subcategory/Seed%20of%204660/Standard/Kernel%20Size%20of%201%20(Much%20Faster)/Accuracy.png)
 
 ```Loss (kernel size of 5)```
 
@@ -155,7 +155,7 @@ The kernel amounts were also modified, with one test setting them to 1 and anoth
 
 ```Accuracy (kernel size of 5)```
 
-[Accuracy chart for a seed of 4660 with kernel size of 5](https://github.com/Robert-Beane/theoryProject/blob/scrape-for-test-data/Data%20Figures/Resplit%20-%208%20Images%20per%20Training%20Subcategory/Seed%20of%204660/Standard/Kernel%20Size%20of%205%20(Slower)/Accuracy.png)
+![Accuracy chart for a seed of 4660 with kernel size of 5](https://github.com/Robert-Beane/theoryProject/blob/scrape-for-test-data/Data%20Figures/Resplit%20-%208%20Images%20per%20Training%20Subcategory/Seed%20of%204660/Standard/Kernel%20Size%20of%205%20(Slower)/Accuracy.png)
 
 
 ### Regularization Attempts
@@ -166,21 +166,21 @@ After we began work on duplicating our data, we attempted to regularize our mode
 
 ```Loss (L1 regularization)```
 
-[Loss chart for a seed of 4660 with L1 norm](Charts/L1%20Regularizationloss.png)
+![Loss chart for a seed of 4660 with L1 norm](Charts/L1%20Regularizationloss.png)
 
 ```Accuracy (L1 regularization)```
 
-[Accuracy chart for a seed of 4660 with L1 norm](Charts/L1%20Regularizationaccuracy.png)
+![Accuracy chart for a seed of 4660 with L1 norm](Charts/L1%20Regularizationaccuracy.png)
 
 #### L2 Regularization
 
 ```Loss (L2 regularization)```
 
-[Loss chart for a seed of 4660 with L2 norm](Charts/L2%20Regularizationloss.png)
+![Loss chart for a seed of 4660 with L2 norm](Charts/L2%20Regularizationloss.png)
 
 ```Accuracy (L2 regularization)```
 
-[Accuracy chart for a seed of 4660 with L2 norm](Charts/L2%20Regularizationaccuracy.png)
+![Accuracy chart for a seed of 4660 with L2 norm](Charts/L2%20Regularizationaccuracy.png)
 
 ## Results
 
