@@ -96,9 +96,10 @@ _________________________________________________________________
 Our primary goal with this project was to be able to accurately process the training and validation data above a threshold of 20%. Our hypothesis was that we would eventually be able to balance out these accuracies through tweaks to our neural network design (different filter counts, activation functions, kernel sizes, etc.).
 
 ### Project Methods
+Our first implementation utilizes an MLP (multilayer perceptron) to train and validate data. It's quite minimal, using a classic setup for a neural network: one input layer, two hidden layers, and one output layer. No convolutions are used to take on portions of the data. The images are taken in, preprocessed using a built in keras function, and sent sequentially through the neural network. The output for loss and accuracy are very low.
 
 Our final implementation utilizes a CNN (convolutional neural network) to train and validate data. This neural network is particulary effective for image processing. Images consist of multidimensional data which can be quite complex to process and analyze. 
-CNNs are able to reduce the dimensionality of images by taking portions of the data and filtering it through their networks of layers. A great amount of precision can be acquired by implementing a CNN structure. Once we did this for our own project, our training data went from being ~5% accurate to ~90% accurate.
+CNNs are able to reduce the dimensionality of images by taking portions of the data and filtering it through their networks of layers. A great amount of precision can be acquired by implementing a CNN structure, as will be discussed later on.
 
 ### Training Process
 
@@ -106,6 +107,10 @@ Our dataset already came with a set for training (```index.csv```) that containe
 This file had the same format as ```index.csv``` but consisted of randomly selected images of specific characters. We attempted adding our own images of the same characters to the training dataset but found that our accuracy became much more inconsistent. We also decided to use our testing dataset as our validation dataset. This could also be a cause for the low validation accuracy we see in our network.
 
 ## Design Process
+
+### Architecture Change
+
+As mentioned previously, we ended up converting the neural network from a MLP to a CNN. In an attempt to try and mitigate the accuracy problem, we tried condensing the now non-existent Harry Potter and Jurassic World categories into an Other category to try and see if the accuracy would improve, but it did nothing worth noting. The subcategories (which is really what the neural network is after) were still the same as they were before, just reorganized. At that point, we chose to give a convolutional neural network a try. The improvement made to the training and validation were immediately apparent. The training data went from being ~5% accurate to ~90% accurate, while the validation data went from being around the same low to ~30% accurate. The loss also increased for both, indicating that the process was not static. But, there was clearly an issue with overfitting. Thus, we ended up tinkering with the code to see if we could mitigate that issue.
 
 ### Code Tinkering
 
