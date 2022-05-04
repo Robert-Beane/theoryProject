@@ -34,6 +34,7 @@ You also must install Graphviz which can be done [here](https://graphviz.org/dow
 * [normalizeTraining.py](normalizeTraining.py)  - Script for normalizing images, was not used in the final CNN.
 * [multiLayer.py](multiLayer.py)  - Runs implementation of Multi Layer Perceptron (low accuracy).
 * [convolutional.py](convolutional.py)  - Runs the CNN for the LEGO dataset; the final, main implementation.
+* [copyFiles.py](copyFiles.py)  - Duplicate files script. Made to duplicate a large amount of images at once.
 
 ## Overview
 
